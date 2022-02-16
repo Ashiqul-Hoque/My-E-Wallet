@@ -10,49 +10,82 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <title>Document</title>
+    <title>My E-Wallet</title>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <h1 class="py-3 text-center text-success">My E-Wallet</h1>
     <div class="container">
       <div class="row row-cols-1 row-cols-lg-2">
         <div class="col">
           <img class="w-100" src="images/img.jpg" alt="" />
         </div>
-        <div class="col">
-          <div class="input-group mb-3 input-group-lg">
-            <span class="input-group-text" id="basic-addon1">input</span>
+        <div class="col bg-light py-5 px-5 rounded">
+          <h4 class="text-center pb-3">Income</h4>
+          <div class="input-group mb-3 w-75 mx-auto">
+            <span class="input-group-text">Income</span>
             <input
               type="number"
               class="form-control"
-              placeholder="input"
+              placeholder=""
               aria-label="Username"
               aria-describedby="basic-addon1"
             />
           </div>
-          <p>Error Massage</p>
-          <div class="input-group mb-3 input-group-lg">
-            <span class="input-group-text" id="basic-addon1">input</span>
+          <p class="text-center text-danger"">Error Massage</p>
+          <h4 class="text-center pb-3">Expenses</h4>
+          <div class="input-group mb-3 w-75 mx-auto">
+            <span class="input-group-text" id="basic-addon1">Food</span>
             <input
               type="number"
               class="form-control"
-              placeholder="input"
+              placeholder=""
               aria-label="Username"
               aria-describedby="basic-addon1"
             />
           </div>
-          <p>Error Massage</p>
-          <div class="input-group mb-3 input-group-lg">
-            <span class="input-group-text" id="basic">input</span>
+          <p class="text-center text-danger">Error Massage</p>
+          <div class="input-group mb-3 w-75 mx-auto">
+            <span class="input-group-text" id="basic">Rent</span>
             <input
               type="number"
               class="form-control"
-              placeholder="input"
+              placeholder=""
               aria-label="Username"
               aria-describedby="basic-addon1"
             />
           </div>
-          <p>Error Massage</p>
+          <p class="text-center text-danger">Error Massage</p>
+          <div class="input-group mb-3 w-75 mx-auto">
+            <span class="input-group-text" id="basic">Clothes</span>
+            <input
+              type="number"
+              class="form-control"
+              placeholder=""
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <p class="text-center text-danger">Error Massage</p>
+          <button type="button" class="btn btn-primary px-4">Calculate</button>
+          <h4 class="text-center">Total Expenses : </h4>
+          <h4 class="text-center mb-4">Balance : </h4>
+          <div class="d-flex mb-3 justify-content-center">
+             <div class="input-group w-50 me-4">
+                <span class="input-group-text" id="basic">Save</span>
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder=""
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+            <h4 class="text-center me-4">%</h4>
+            <button type="button" class="btn btn-primary px-5">Save</button>
+          </div>
+          <h4 class="text-center">Saving Amount : </h4>
+          <h4 class="text-center mb-4">Remaining Balance : </h4>
+          </div>
         </div>
       </div>
     </div>
