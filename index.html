@@ -24,11 +24,12 @@
         </div>
 
 <!-- -----------Form side start---------- -->
-        <div class="col bg-light py-5 px-5 rounded">
-          <h4 class="text-center pb-3">Income</h4>
-          <div class="input-group mb-3 w-75 mx-auto">
+        <div class="col bg-light py-4 px-4 mb-4 rounded">
+          <h4 class="text-center pb-1">Income</h4>
+          <div class="input-group w-75 mx-auto">
             <span class="input-group-text">Income</span>
             <input
+            id="incomeInput"
               type="number"
               class="form-control"
               placeholder=""
@@ -36,11 +37,12 @@
               aria-describedby="basic-addon1"
             />
           </div>
-          <p class="text-center text-danger"">Error Massage</p>
-          <h4 class="text-center pb-3">Expenses</h4>
-          <div class="input-group mb-3 w-75 mx-auto">
+          <p id="error1" class="text-center text-danger d-none"">Error Massage</p>
+          <h4 class="text-center my-2">Expenses</h4>
+          <div class="input-group w-75 mx-auto my-3">
             <span class="input-group-text" id="basic-addon1">Food</span>
             <input
+            id="foodInput"
               type="number"
               class="form-control"
               placeholder=""
@@ -48,10 +50,11 @@
               aria-describedby="basic-addon1"
             />
           </div>
-          <p class="text-center text-danger">Error Massage</p>
-          <div class="input-group mb-3 w-75 mx-auto">
+          <p id="error2" class="text-center text-danger d-none">Error Massage</p>
+          <div class="input-group w-75 mx-auto my-3">
             <span class="input-group-text" id="basic">Rent</span>
             <input
+            id="rentInput"
               type="number"
               class="form-control"
               placeholder=""
@@ -59,10 +62,11 @@
               aria-describedby="basic-addon1"
             />
           </div>
-          <p class="text-center text-danger">Error Massage</p>
-          <div class="input-group mb-3 w-75 mx-auto">
+          <p id="error3" class="text-center text-danger d-none">Error Massage</p>
+          <div class="input-group w-75 mx-auto my-3">
             <span class="input-group-text" id="basic">Clothes</span>
             <input
+            id="clothesInput"
               type="number"
               class="form-control"
               placeholder=""
@@ -70,12 +74,15 @@
               aria-describedby="basic-addon1"
             />
           </div>
-          <p class="text-center text-danger">Error Massage</p>
-          <button type="button" class="btn btn-primary px-4">Calculate</button>
-          <h4 class="text-center">Total Expenses : </h4>
-          <h4 class="text-center mb-4">Balance : </h4>
+          <p id="error4" class="text-center text-danger d-none">Error Massage</p>
+          <div class="d-flex mb-3">
+                <button type="button" id="calcButton" class="btn btn-primary px-4 mx-auto">Calculate</button>
+          </div>
+        
+          <h4 class="text-center">Total Expenses : <span id="totalExpen"> 0</span> </h4>
+          <h4 class="text-center mb-4">Balance : <span id="balance">0</span></h4>
           <div class="d-flex mb-3 justify-content-center">
-             <div class="input-group w-50 me-4">
+             <div class="input-group w-75 me-4">
                 <span class="input-group-text" id="basic">Save</span>
                 <input
                   type="number"
@@ -87,8 +94,8 @@
               </div>
             <h4 class="text-center me-4">%</h4>
             <button type="button" class="btn btn-primary px-5">Save</button>
-            <p class="text-center text-danger"">Error Massage</p>
           </div>
+          <p class="text-center text-danger"">Error Massage</p>
           <h4 class="text-center">Saving Amount : </h4>
           <h4 class="text-center mb-4">Remaining Balance : </h4>
           </div>
