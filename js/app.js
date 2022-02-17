@@ -2,7 +2,7 @@ function catchInput(id, err) {
   const inputAmount = document.getElementById(id);
   const inputValue = inputAmount.value;
   const inputNumber = parseFloat(inputValue);
-  if (inputNumber < 0) {
+  if (isNaN(inputNumber) || inputNumber < 0) {
     document.getElementById(err).style.display = "block";
   } else {
     document.getElementById(err).style.display = "none";
