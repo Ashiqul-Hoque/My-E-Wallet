@@ -4,7 +4,9 @@ function catchInput(id, err) {
   const inputNumber = parseFloat(inputValue);
   if (inputNumber < 0) {
     document.getElementById(err).style.display = "block";
+    inputNumber = 0;
   } else {
+    document.getElementById(err).style.display = "none";
     return inputNumber;
   }
 }
@@ -31,6 +33,7 @@ const calculateButton = document
     if (expenc > balance) {
       document.getElementById("error5").style.display = "block";
     } else {
+      document.getElementById("error5").style.display = "none";
       const expen = document.getElementById("totalExpen");
       expen.innerText = expenc;
       const balanceElement = document.getElementById("balance");
@@ -41,10 +44,13 @@ const calculateButton = document
 const saveButton = document
   .getElementById("saveBtn")
   .addEventListener("click", function () {
-    const saveInputPercent = catchInput("saveInput");
+    const saveInput = document.getElementById("saveInput");
+    const saveNumber = saveInput.value;
+    const saveInputPercent = parseFloat(saveNumber);
     if (saveInputPercent > 100 || saveInputPercent < 0) {
       document.getElementById("error6").style.display = "block";
     } else {
+      document.getElementById("error6").style.display = "none";
       let saveAmount = saveInputPercent / 100;
       let balanc = totalBalance();
       let totalSave = saveAmount * balanc;
