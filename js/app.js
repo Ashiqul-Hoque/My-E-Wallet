@@ -1,3 +1,4 @@
+// -----------Input collection--------
 function catchInput(id, err) {
   const inputAmount = document.getElementById(id);
   const inputValue = inputAmount.value;
@@ -10,6 +11,7 @@ function catchInput(id, err) {
   }
 }
 
+// -----------Expenses calculation--------
 function totalExpenses() {
   let food = catchInput("foodInput", "error2");
   let rent = catchInput("rentInput", "error3");
@@ -17,11 +19,14 @@ function totalExpenses() {
   let totalExpenses = food + rent + clothes;
   return totalExpenses;
 }
+
+// -----------income--------
 function income() {
   let income = catchInput("incomeInput", "error1");
   return income;
 }
 
+// -----------balance calculation--------
 function totalBalance() {
   let expenses = totalExpenses();
   let incomeTotal = income();
@@ -29,6 +34,7 @@ function totalBalance() {
   return totalbalance;
 }
 
+// -----------calculate button function--------
 const calculateButton = document
   .getElementById("calcButton")
   .addEventListener("click", function () {
@@ -47,25 +53,37 @@ const calculateButton = document
     }
   });
 
+// -----------save button function--------
 const saveButton = document
   .getElementById("saveBtn")
   .addEventListener("click", function () {
     const saveInput = document.getElementById("saveInput");
     const saveNumber = saveInput.value;
     const saveInputPercent = parseFloat(saveNumber);
+
     const saving = document.getElementById("saving");
     const remainBal = document.getElementById("remain");
+
     if (saveInputPercent > 100 || saveInputPercent < 0) {
       document.getElementById("error6").style.display = "block";
       saving.innerText = 0;
       remainBal.innerText = 0;
     } else {
       document.getElementById("error6").style.display = "none";
+      let balanceMoney = totalBalance();
       let saveAmount = saveInputPercent / 100;
-      let balanc = totalBalance();
-      let totalSave = saveAmount * balanc;
-      let remainBalance = balanc - totalSave;
-      saving.innerText = totalSave;
-      remainBal.innerText = remainBalance;
+      let incomeMoney = income();
+      let totalSave = saveAmount * incomeMoney;
+
+      if (totalSave > balanceMoney) {
+        document.getElementById("error7").style.display = "block";
+        saving.innerText = 0;
+        remainBal.innerText = 0;
+      } else {
+        document.getElementById("error7").style.display = "none";
+        saving.innerText = totalSave;
+        let remainBalance = balanceMoney - totalSave;
+        remainBal.innerText = remainBalance;
+      }
     }
   });
